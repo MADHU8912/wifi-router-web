@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>WiFi Router Admin Panel</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <header class="topbar">
+      <h1>WiFi Router Admin Panel</h1>
+      <div class="status online">Internet: Connected</div>
+    </header>
+
+    <div class="grid">
+      <section class="card">
+        <h2>Router Status</h2>
+        <p><strong>Router Name:</strong> HomeNet X1200</p>
+        <p><strong>Firmware:</strong> v1.0.3</p>
+        <p><strong>WAN IP:</strong> 192.168.0.1</p>
+        <p><strong>Uptime:</strong> <span id="uptime">12h 45m</span></p>
+        <button onclick="rebootRouter()">Reboot Router</button>
+      </section>
+
+      <section class="card">
+        <h2>WiFi Settings</h2>
+        <label>WiFi Name (SSID)</label>
+        <input type="text" id="ssid" value="MyHomeWiFi" />
+
+        <label>Password</label>
+        <input type="password" id="password" value="admin12345" />
+
+        <label>Channel</label>
+        <select id="channel">
+          <option>1</option>
+          <option>6</option>
+          <option selected>11</option>
+        </select>
+
+        <button onclick="saveWifi()">Save WiFi Settings</button>
+        <p id="wifiMsg"></p>
+      </section>
+
+      <section class="card">
+        <h2>Connected Devices</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Device Name</th>
+              <th>IP Address</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody id="deviceTable">
+            <tr>
+              <td>Laptop</td>
+              <td>192.168.0.101</td>
+              <td>Active</td>
+            </tr>
+            <tr>
+              <td>Mobile</td>
+              <td>192.168.0.102</td>
+              <td>Active</td>
+            </tr>
+            <tr>
+              <td>Smart TV</td>
+              <td>192.168.0.103</td>
+              <td>Idle</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="card">
+        <h2>Network Usage</h2>
+        <p><strong>Download Speed:</strong> 120 Mbps</p>
+        <p><strong>Upload Speed:</strong> 25 Mbps</p>
+        <p><strong>Connected Users:</strong> 3</p>
+        <div class="usage-bar">
+          <div class="usage-fill"></div>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
